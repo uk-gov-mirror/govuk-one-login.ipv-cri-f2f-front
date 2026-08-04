@@ -6,6 +6,17 @@ const session = require("express-session");
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
 const DynamoDBStore = require("connect-dynamodb")(session);
 const wizard = require("hmpo-form-wizard");
+const {
+  PACKAGE_NAME,
+  API,
+  APP,
+  PORT,
+  SESSION_SECRET,
+  SESSION_TABLE_NAME,
+  SESSION_TTL,
+  PROXY_API,
+} = require("./lib/config");
+const logger = require("./lib/logger").get(PACKAGE_NAME);
 
 const commonExpress = require("@govuk-one-login/di-ipv-cri-common-express");
 const frontendUi = require("@govuk-one-login/frontend-ui");
@@ -31,18 +42,6 @@ const {
 const {
   frontendVitalSignsInitFromApp,
 } = require("@govuk-one-login/frontend-vital-signs");
-
-const {
-  PACKAGE_NAME,
-  API,
-  APP,
-  PORT,
-  SESSION_SECRET,
-  SESSION_TABLE_NAME,
-  SESSION_TTL,
-  PROXY_API,
-} = require("./lib/config");
-const logger = require("./lib/logger").get(PACKAGE_NAME);
 
 const { setup } =
   require("@govuk-one-login/di-ipv-cri-common-express").bootstrap;

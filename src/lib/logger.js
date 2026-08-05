@@ -24,9 +24,7 @@ const normaliseForHmpo = (logger) => {
 
 const get = (...args) => {
   const logger = commonLogger.get(...args);
-console.log("<<<<<<<<", process.env.USE_PINO_LOGGER)
-console.log("????????", process.env.USE_PINO_LOGGER === "true")
-  if (process.env.USE_PINO_LOGGER === "true") {
+  if (process.env.USE_PINO_LOGGER === true) {
     return logger;
   }
 

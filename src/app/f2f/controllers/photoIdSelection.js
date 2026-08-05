@@ -5,7 +5,7 @@ const logger = require("../../../lib/logger").get(PACKAGE_NAME);
 class PhotoIdSelectionController extends BaseController {
   async saveValues(req, res, next) {
     try {
-      logger.info({ req, res }, "user submitting photo Id choice",);
+      logger.info("user submitting photo Id choice", { req, res });
       req.sessionModel.set("redirect_url", undefined);
       req.sessionModel.set(APP.PHOTO_ID_OPTIONS.UK_PASSPORT, undefined);
       req.sessionModel.set(APP.PHOTO_ID_OPTIONS.UK_PHOTOCARD_DL, undefined);
@@ -58,7 +58,7 @@ class PhotoIdSelectionController extends BaseController {
         case APP.PHOTO_ID_OPTIONS.EEA_IDENTITY_CARD: {
           logger.info(
             "photo-id-selection: user has selected EU ID Card - redirecting to EU ID Card details page",
-            { req, res }
+            { req, res },
           );
           req.sessionModel.set(APP.PHOTO_ID_OPTIONS.EEA_IDENTITY_CARD, true);
           req.sessionModel.set("changeUrl", "national-identity-card-expire");
@@ -67,7 +67,7 @@ class PhotoIdSelectionController extends BaseController {
         case APP.PHOTO_ID_OPTIONS.NO_PHOTO_ID: {
           logger.info(
             "photo-id-selection: user has selected No ID - aborting journey",
-            { req, res }
+            { req, res },
           );
           req.sessionModel.set(APP.PHOTO_ID_OPTIONS.NO_PHOTO_ID, true);
           return next();

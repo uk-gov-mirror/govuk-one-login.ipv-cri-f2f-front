@@ -25,6 +25,8 @@ jobs:
         run: yarn build
       - name: Run test and write coverage
         run: yarn test:coverage
+        env: 
+          USE_PINO_LOGGER: true
       - name: Install Playwright browsers
         run: yarn playwright install --with-deps
       - name: Run browser tests

@@ -139,7 +139,7 @@ Mappings:
       GTMIDGA4: "GTM-KD86CMZ"
       ANALYTICSDOMAIN: "dev.account.gov.uk"
       DEVICEINTELLIGENCEDOMAIN: "account.gov.uk"
-      USEPINOLOGGER: false
+      USEPINOLOGGER: true
       PROXYURL: "f2f-cri-outbound-proxy-proxy.review-o.dev.account.gov.uk"
       LOGLEVEL: "debug"
       minECSCount: 1

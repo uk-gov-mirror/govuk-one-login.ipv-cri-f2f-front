@@ -5,7 +5,7 @@ const logger = require("../../../lib/logger").get(PACKAGE_NAME);
 class PhotoIdSelectionController extends BaseController {
   async saveValues(req, res, next) {
     try {
-      logger.info("user submitting photo Id choice", { req, res });
+      logger.info({ req, res }, "user submitting photo Id choice",);
       req.sessionModel.set("redirect_url", undefined);
       req.sessionModel.set(APP.PHOTO_ID_OPTIONS.UK_PASSPORT, undefined);
       req.sessionModel.set(APP.PHOTO_ID_OPTIONS.UK_PHOTOCARD_DL, undefined);

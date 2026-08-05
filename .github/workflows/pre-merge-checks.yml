@@ -23,11 +23,11 @@ jobs:
         run: yarn lint
       - name: Run build
         run: yarn build
-      - name: Run test and write coverage - Pino true
+      - name: Run test and write coverage - Pino Logger
         run: yarn test:coverage
         env: 
           USE_PINO_LOGGER: true
-      - name: Run test and write coverage - Pino false
+      - name: Run test and write coverage - hmpo-logger 
         run: yarn test:coverage
         env: 
           USE_PINO_LOGGER: false

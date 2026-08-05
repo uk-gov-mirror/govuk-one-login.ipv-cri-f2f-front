@@ -6,11 +6,11 @@ class PhotoIdExpiryController extends BaseController {
   async saveValues(req, res, next) {
     try {
       logger.info(
+        "user selecting new option after photo Id expiry",
         {
           req,
           res,
-        },
-        "user selecting new option after photo Id expiry",
+        }
       );
       req.sessionModel.set("redirect_url", undefined);
       req.sessionModel.set(
